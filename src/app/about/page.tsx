@@ -5,10 +5,10 @@ const AboutPage = () => {
   return (
     <>
       {/* Header space placeholder */}
-      <div style={{ height: '86px' }}></div>
+      <div style={{ height: '150px' }}></div>
 
       {/* Title and subtitle */}
-      <section className="text-left px-20 mt-[90px] "> {/* marginTop ensures space after the header */}
+      <section className="text-left px-10 mt-[90px] "> {/* marginTop ensures space after the header */}
         <h2 style={{
           fontFamily: "'Gotham Black', sans-serif",
           fontWeight: 500,
@@ -31,7 +31,7 @@ const AboutPage = () => {
       </section>
 
       {/* First image */}
-      <section className="flex justify-center mt-20">
+      <section className="flex justify-center mt-[150px]">
         <div className="w-full">
           <div className="relative w-full h-[600px]">
             <Image src="/images/hero/Group11.png" alt="First Image" layout="fill" objectFit="cover" />
@@ -61,19 +61,62 @@ const AboutPage = () => {
       </section>
 
       {/* Connect with Us form */}
-      <section className="bg-white py-8 mt-4"> {/* mt-4 adds margin-top space between the image and this section */}
-        <div className="container mx-auto">
-          <h2 className="text-center font-bold text-3xl mb-6">Connect with Us</h2>
-          <div className="max-w-md mx-auto">
-            <form className="flex flex-col gap-4">
-              <input type="text" placeholder="Name" className="p-4 border rounded" />
-              <input type="email" placeholder="E-Mail" className="p-4 border rounded" />
-              <textarea placeholder="Comments" className="p-4 border rounded"></textarea>
-              <button type="submit" className="p-4 bg-yellow-400 rounded text-white">Submit</button>
-            </form>
+      <div className="bg-white py-8 mt-[100px] flex justify-center mb-[100px]" >
+      <div className="w-full max-w-2xl p-8 shadow-md rounded-lg" style={{ backgroundColor: '#F9F9F9' }}>
+        {/* Heading with underline */}
+        <h2 className="text-center font-bold text-3xl mb-6 inline-block">
+          <span className="border-b-4" style={{ borderColor: '#FFBA08' }}>
+            Connect with Us
+          </span>
+        </h2>
+        
+        {/* Form */}
+        <form className="flex flex-col mt-4">
+          <div className="flex flex-wrap -mx-2">
+            {/* Name */}
+            <div className="w-full md:w-1/2 px-2 mb-4">
+              <label htmlFor="name" className="font-bold text-sm mb-2 block">Name</label>
+              <input type="text" placeholder="Your Name here" className="w-full rounded-lg border px-4 py-2" style={{ backgroundColor: '#F3F3F3' }} />
+            </div>
+            {/* E-Mail */}
+            <div className="w-full md:w-1/2 px-2 mb-4">
+              <label htmlFor="email" className="font-bold text-sm mb-2 block">E-Mail</label>
+              <input type="email" placeholder="youremail@mail.com" className="w-full rounded-lg border px-4 py-2" style={{ backgroundColor: '#F3F3F3' }} />
+            </div>
           </div>
-        </div>
-      </section>
+          
+          <div className="flex flex-wrap -mx-2">
+            {/* Phone Number */}
+            <div className="w-full md:w-1/2 px-2 mb-4">
+              <label htmlFor="phone" className="font-bold text-sm mb-2 block">Phone Number</label>
+              <div className="flex">
+                <select className="rounded-lg border mr-2 px-4 py-2" style={{ backgroundColor: '#F3F3F3' }}>
+                  <option value="+91">+91</option>
+                  {/* ... other options ... */}
+                </select>
+                <input type="tel" placeholder="Phone Number" className="w-full rounded-lg border px-4 py-2" style={{ backgroundColor: '#F3F3F3' }} />
+              </div>
+            </div>
+            {/* Name of Organization */}
+            <div className="w-full md:w-1/2 px-2 mb-4">
+              <label htmlFor="organization" className="font-bold text-sm mb-2 block">Name of Organization</label>
+              <input type="text" placeholder="Name of Organization" className="w-full rounded-lg border px-4 py-2" style={{ backgroundColor: '#F3F3F3' }} />
+            </div>
+          </div>
+          
+          {/* Comments */}
+          <div className="px-2 mb-4">
+            <label htmlFor="comments" className="font-bold text-sm mb-2 block">Comments</label>
+            <textarea placeholder="Leave a Note" className="w-full rounded-lg border px-4 py-2" rows={4} style={{ backgroundColor: '#F3F3F3' }}></textarea>
+          </div>
+          
+          {/* Submit Button */}
+          <div className="px-2">
+            <button type="submit" className="w-full md:w-1/2 rounded-lg px-4 py-2 text-white font-semibold" style={{ backgroundColor: '#FFBA08' }}>Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
     </>
   );
 };
