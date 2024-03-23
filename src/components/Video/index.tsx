@@ -20,7 +20,7 @@ const Video = () => {
         </div>
       </div>
       
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-8 py-8">
         <SectionTitle
           title="Do you know that 75.8 million people in India are forced to buy water at high prices or use contaminated supplies."
           paragraph=""
