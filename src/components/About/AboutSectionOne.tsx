@@ -7,11 +7,7 @@ const AboutSectionOne = () => {
       <div className="container mx-auto relative">
         {/* Title "Want your Brand to flow seamlessly?" */}
         <h2 style={{
-          position: 'absolute',
-          width: '545px',
-          height: '106px',
-          left: '122px',
-          top: '274px',
+          
           fontFamily: "'Gotham Black', sans-serif",
           fontWeight: 500,
           fontSize: '48px',
@@ -23,11 +19,8 @@ const AboutSectionOne = () => {
 
         {/* Subtitle "Let’s hydrate your Marketing Strategy!" */}
         <h2 style={{
-          position: 'absolute',
-          width: '656px',
-          height: '142px',
-          left: '122px',
-          top: '405px',
+       
+          
           fontFamily: "'Gotham Black', sans-serif",
           fontWeight: 500,
           fontSize: '64px',

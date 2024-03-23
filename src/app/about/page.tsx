@@ -13,13 +13,11 @@ export const metadata: Metadata = {
 const AboutPage = () => {
   return (
     <>
-      {/* <Breadcrumb
-        pageName="Advertise"
-        description=""
-      /> */}
-      <AboutSectionOne />
       
-      <AboutSectionTwo />
+
+      <AboutSectionOne />
+      {/* <AboutSectionTwo /> */}
+
     </>
   );
 };
