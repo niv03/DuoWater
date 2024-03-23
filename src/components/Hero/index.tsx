@@ -19,9 +19,11 @@ const Hero = () => {
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">
               <div className="mx-auto max-w-[800px] text-center">
-              <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight text-left" style={{ maxWidth: 'max-content' }}>
-  EVERY HAND<br />HAS YOUR<br />BRAND
+              <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight text-left" style={{ maxWidth: 'max-content' ,fontFamily: "'Gotham Black', sans-serif", fontWeight: 500}}>
+  <span className="text-white font-bold">EVERY HAND<br />HAS </span>
+  <span className="text-black font-bold">YOUR<br />BRAND</span>
 </h1>
+
 
                 <p className="mb-12 text-base !leading-relaxed text-body-color dark:text-body-color-dark sm:text-lg md:text-xl">
                 </p>
@@ -34,7 +36,7 @@ const Hero = () => {
                   </Link> */}
                   <Link
                     href="/about"
-                    className="inline-block rounded-sm bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
+                    className="inline-block rounded-lg bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
                     style={{ backgroundColor: '#FFBA08' }}
                   >
 
