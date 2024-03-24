@@ -41,14 +41,7 @@ const ScrollingBottlePage = () => {
   return (
     <div style={{ height: `${scrollableHeight}px`, background: 'white' }}>
       {/* A container for the bottle that sticks to the screen center as the user scrolls */}
-      <div style={bottleStyle}>
-        <Image
-          src="/images/hero/transparentbottle.png" // The path to your bottle image
-          alt="Animated Bottle"
-          width={500} // Set the size of the bottle
-          height={1000} // Maintain the aspect ratio
-        />
-      </div>
+      
       {/* Add more content here if needed to extend the page height */}
     </div>
   );
