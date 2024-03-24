@@ -1,7 +1,33 @@
-import React from 'react';
+'use client'
+import React,{ useState } from 'react';
 import Image from 'next/image';
 
 const AboutPage = () => {
+  const [submissionMessage, setSubmissionMessage] = useState('');
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmissionMessage("Sending...");
+  
+    const formData = new FormData(e.target); // Automatically captures all form fields with 'name' attribute
+    formData.append("access_key", "18b77347-f4f3-45ec-95bc-76716027b83e"); // Replace with your actual access key
+
+    // Now, use `formData` directly in your fetch request
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+   
+      body: formData,
+    });
+  
+    const result = await response.json();
+  
+    if (result.success) {
+      setSubmissionMessage("Thank you for contacting us!");
+      e.target.reset(); // Clear the form fields
+    } else {
+      setSubmissionMessage("There was an error sending your message.");
+    }
+  }
   return (
     <>
       {/* Header space placeholder */}
@@ -71,17 +97,19 @@ const AboutPage = () => {
         </h2>
         
         {/* Form */}
-        <form className="flex flex-col mt-4">
+        <form className="flex flex-col mt-4" onSubmit={handleSubmit}>
           <div className="flex flex-wrap -mx-2">
+            
             {/* Name */}
             <div className="w-full md:w-1/2 px-2 mb-4">
+
               <label htmlFor="name" className="font-bold text-sm mb-2 block">Name</label>
-              <input type="text" placeholder="Your Name here" className="w-full rounded-lg border px-4 py-2" style={{ backgroundColor: '#F3F3F3' }} />
+              <input type="text" name="name" placeholder="Your Name here" className="w-full rounded-lg border px-4 py-2" style={{ backgroundColor: '#F3F3F3' }} />
             </div>
             {/* E-Mail */}
             <div className="w-full md:w-1/2 px-2 mb-4">
               <label htmlFor="email" className="font-bold text-sm mb-2 block">E-Mail</label>
-              <input type="email" placeholder="youremail@mail.com" className="w-full rounded-lg border px-4 py-2" style={{ backgroundColor: '#F3F3F3' }} />
+              <input type="email" name="email" placeholder="youremail@mail.com" className="w-full rounded-lg border px-4 py-2" style={{ backgroundColor: '#F3F3F3' }} />
             </div>
           </div>
           
@@ -90,31 +118,34 @@ const AboutPage = () => {
             <div className="w-full md:w-1/2 px-2 mb-4">
               <label htmlFor="phone" className="font-bold text-sm mb-2 block">Phone Number</label>
               <div className="flex">
-                <select className="rounded-lg border mr-2 px-4 py-2" style={{ backgroundColor: '#F3F3F3' }}>
-                  <option value="+91">+91</option>
+                {/* <select className="rounded-lg border mr-2 px-4 py-2" style={{ backgroundColor: '#F3F3F3' }}>
+                  <option value="+91">+91</option> */}
+                  {/* <option data-countryCode="ZW" value="263">Zimbabwe (+263)</option> */}
                   {/* ... other options ... */}
-                </select>
-                <input type="tel" placeholder="Phone Number" className="w-full rounded-lg border px-4 py-2" style={{ backgroundColor: '#F3F3F3' }} />
+                {/* </select> */}
+                <input type="tel"  name="phone" placeholder="Phone Number" className="w-full rounded-lg border px-4 py-2" style={{ backgroundColor: '#F3F3F3' }} />
               </div>
             </div>
             {/* Name of Organization */}
             <div className="w-full md:w-1/2 px-2 mb-4">
               <label htmlFor="organization" className="font-bold text-sm mb-2 block">Name of Organization</label>
-              <input type="text" placeholder="Name of Organization" className="w-full rounded-lg border px-4 py-2" style={{ backgroundColor: '#F3F3F3' }} />
+              <input type="text" name="organization" placeholder="Name of Organization" className="w-full rounded-lg border px-4 py-2" style={{ backgroundColor: '#F3F3F3' }} />
             </div>
           </div>
           
           {/* Comments */}
-          <div className="px-2 mb-4">
+          <div className="flex flex-wrap -mx-2">
+          <div className="w-full  px-2 mb-4">
             <label htmlFor="comments" className="font-bold text-sm mb-2 block">Comments</label>
-            <textarea placeholder="Leave a Note" className="w-full rounded-lg border px-4 py-2" rows={4} style={{ backgroundColor: '#F3F3F3' }}></textarea>
+            <textarea name="comments" placeholder="Leave a Note" className="w-full rounded-lg border px-4 py-2" rows={4} style={{ backgroundColor: '#F3F3F3' }}></textarea>
           </div>
-          
+          </div>
           {/* Submit Button */}
           <div className="px-2">
             <button type="submit" className="w-full md:w-1/2 rounded-lg px-4 py-2 text-white font-semibold" style={{ backgroundColor: '#FFBA08' }}>Submit</button>
           </div>
         </form>
+        {submissionMessage && <div className="text-center my-4">{submissionMessage}</div>}
       </div>
     </div>
     </>

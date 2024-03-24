@@ -1,6 +1,33 @@
+'use client'
+import React,{ useState } from 'react';
 import Image from 'next/image';
 
 const Contact = () => {
+  const [submissionMessage, setSubmissionMessage] = useState('');
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmissionMessage("Sending...");
+  
+    const formData = new FormData(e.target); // Automatically captures all form fields with 'name' attribute
+    formData.append("access_key", "18b77347-f4f3-45ec-95bc-76716027b83e"); // Replace with your actual access key
+
+    // Now, use `formData` directly in your fetch request
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+   
+      body: formData,
+    });
+  
+    const result = await response.json();
+  
+    if (result.success) {
+      setSubmissionMessage("Thank you for contacting us!");
+      e.target.reset(); // Clear the form fields
+    } else {
+      setSubmissionMessage("There was an error sending your message.");
+    }
+  }
   return (
     <section id="contact" className="py-16 md:py-20 lg:py-28 bg-white" style={{ marginTop: '110px' }}>
       <div className="container mx-auto px-4">
@@ -27,13 +54,14 @@ const Contact = () => {
           {/* Form container */}
           <div className="w-full lg:w-1/2 lg:pl-20 flex justify-center lg:justify-start">
             <div className="w-full lg:max-w-md">
-              <form className="flex flex-col items-stretch">
+              <form className="flex flex-col items-stretch" onSubmit={handleSubmit}>
                 {/* Name field */}
                 <label htmlFor="name" className="mb-2 font-bold text-black">
                   Name
                 </label>
                 <input
                   type="text"
+                  name="name"
                   placeholder="Your Name here"
                   className="w-full rounded-lg border bg-[#f8f8f8] px-6 py-3 text-base text-body-color mb-6 outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:focus:border-primary dark:focus:shadow-none"
                 />
@@ -44,6 +72,7 @@ const Contact = () => {
                 </label>
                 <input
                   type="email"
+                  name="email"
                   placeholder="youremail@mail.com"
                   className="w-full rounded-lg border bg-[#f8f8f8] px-6 py-3 text-base text-body-color mb-6 outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:focus:border-primary dark:focus:shadow-none"
                 />
@@ -54,6 +83,7 @@ const Contact = () => {
                 </label>
                 <textarea
                   rows={3}
+                  name="comments"
                   placeholder="Leave a Note"
                   className="w-full rounded-lg border bg-[#f8f8f8] px-6 py-3 text-base text-body-color mb-8 outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:focus:border-primary dark:focus:shadow-none"
                 ></textarea>
@@ -67,6 +97,7 @@ const Contact = () => {
                   Submit
                 </button>
               </form>
+              {submissionMessage && <div className="text-center my-4">{submissionMessage}</div>}
             </div>
           </div>
         </div>
