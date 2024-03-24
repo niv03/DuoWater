@@ -19,17 +19,18 @@ const Video = () => {
           <p className="text-lg md:text-xl lg:text-2xl">With every bottle sold, we donate a <br /> bottle to the people who truly need it</p>
         </div>
       </div>
-      
-      <div className="container mx-auto px-8 py-8">
-        <SectionTitle
+      <div className="container mx-auto px-8 py-8 mt-20 mb-20 ">
+        {/* <SectionTitle
           title="Do you know that 75.8 million people in India are forced to buy water at high prices or use contaminated supplies."
           paragraph=""
           center
           className="text-xs md:text-sm lg:text-base" // Adjusting the text size via className
-        />
+        /> */}
+        <h2 className="px-10 text-left text-2xl md:text-4xl lg:text-5xl  ">Do you know that 75.8 million people in India ,<br /> are forced to buy water at high prices or use<br /> contaminated supplies.</h2>
       </div>
+     
 
-                <div className="absolute right-0 top-0 flex h-full w-full items-center justify-center">
+                <div className="absolute right-0 top-0 flex h-full w-full items-left justify-center">
                   {/* <button
                     aria-label="video play button"
                     onClick={() => setOpen(true)}
@@ -50,7 +51,9 @@ const Video = () => {
     
 
       {/* <div className="absolute bottom-0 left-0 right-0 z-[-1] h-full w-full bg-[url(/images/video/shape.svg)] bg-cover bg-center bg-no-repeat"></div> */}
-    </section>
+      </section>
+      
+      
   );
 };
 
