@@ -11,7 +11,7 @@ import Testimonials from "@/components/Testimonials";
 import Video from "@/components/Video";
 import { Metadata } from "next";
 import Image from "next/image";
-import ScrollingBottlePage from "@/components/ScrollingBottlePage";
+
 
 export const metadata: Metadata = {
   title: "Duo Water",
@@ -24,8 +24,8 @@ export default function Home() {
     <>
       <ScrollUp />
       <Hero />
-      {/* <ScrollingBottlePage /> */}
-      {/* <Features /> */}
+     
+      <Features />
       <Video />
       {/* <Brands />
       <AboutSectionOne />

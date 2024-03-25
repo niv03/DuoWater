@@ -1,26 +1,20 @@
-import SectionTitle from "../Common/SectionTitle";
-import SingleFeature from "./SingleFeature";
-import featuresData from "./featuresData";
+import React from 'react';
 
 const Features = () => {
   return (
-    <>
-      <section id="features" className="py-16 md:py-20 lg:py-28">
-        <div className="container">
-          <SectionTitle
-            title="Main Features"
-            paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
-            center
-          />
-
-          <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
-            {featuresData.map((feature) => (
-              <SingleFeature key={feature.id} feature={feature} />
-            ))}
-          </div>
-        </div>
-      </section>
-    </>
+    <section
+      id="home"
+      className="bg-white dark:bg-gray-dark"
+      style={{ minHeight: '10vh', width: '100vw', overflowX: 'hidden' }}
+    >
+      <div className="w-full h-full overflow-auto flex justify-center items-start md:items-center"> 
+        <img
+          src="/images/hero/Component1.png"
+          alt="Image"
+          className="min-h-full min-w-full md:h-auto md:max-w-none object-cover object-center"
+        />
+      </div>
+    </section>
   );
 };
 
