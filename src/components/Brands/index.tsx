@@ -4,19 +4,19 @@ import brandsData from "./brandsData";
 
 const Brands = () => {
   return (
-    <section className="pt-16">
-      <div className="container">
-        <div className="-mx-4 flex flex-wrap">
-          <div className="w-full px-4">
-            <div className="flex flex-wrap items-center justify-center rounded-sm bg-gray-light px-8 py-8 dark:bg-gray-dark sm:px-10 md:px-[50px] md:py-[40px] xl:p-[50px] 2xl:px-[70px] 2xl:py-[60px]">
-              {brandsData.map((brand) => (
-                <SingleBrand key={brand.id} brand={brand} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section
+    id="home"
+    className="bg-white dark:bg-gray-dark mt-20"
+    style={{ minHeight: '10vh', width: '100vw', overflowX: 'hidden' }}
+  >
+    <div className="w-full h-full overflow-auto flex justify-center items-start md:items-center"> 
+      <img
+        src="/images/hero/waves.png"
+        alt="Image"
+        className="min-h-full min-w-full md:h-auto md:max-w-none object-cover object-center"
+      />
+    </div>
+  </section>
   );
 };
 

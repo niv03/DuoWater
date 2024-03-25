@@ -840,6 +840,12 @@ input#checkboxLabel:checked ~ .box span{
 .mt-8{
   margin-top: 2rem;
 }
+.mt-10{
+  margin-top: 2.5rem;
+}
+.mt-5{
+  margin-top: 1.25rem;
+}
 .block{
   display: block;
 }
@@ -2167,6 +2173,16 @@ input#checkboxLabel:checked ~ .box span{
     line-height: 1.75rem;
   }
 
+  .sm\:text-xl{
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .sm\:text-sm{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
   .sm\:leading-relaxed{
     line-height: 1.625;
   }
@@ -2373,6 +2389,11 @@ input#checkboxLabel:checked ~ .box span{
   .md\:text-4xl{
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+
+  .md\:text-2xl{
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   .md\:leading-tight{
