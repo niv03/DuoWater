@@ -158,7 +158,7 @@ const Footer = () => {
                 <ul>
                   <li>
                     <Link
-                      href="https://maps.app.goo.gl/PFEuF9MNYYnRDv2e8"
+                      href="https://maps.app.goo.gl/AQRTizRBvfQZaxys9"
                       className="mb-4 inline-block text-base text-body-color duration-300 hover:text-[#FFBA08] dark:text-body-color-dark dark:hover:text-[#FFBA08]"
                     >
                       Directions
