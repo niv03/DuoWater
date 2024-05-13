@@ -6,7 +6,7 @@ const Brands = () => {
   return (
     <section
     id="home"
-    className="bg-white dark:bg-gray-dark mt-20"
+    className="bg-white dark:bg-gray-dark mt-10"
     style={{ minHeight: '10vh', width: '100vw', overflowX: 'hidden' }}
   >
     <div className="w-full h-full overflow-auto flex justify-center items-start md:items-center"> 
